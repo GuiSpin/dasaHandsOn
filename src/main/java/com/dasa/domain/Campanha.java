@@ -14,38 +14,45 @@ import lombok.Data;
 @Entity
 @Table(name = "campanha")
 public class Campanha implements Serializable {
-	
-
-    @Override
-	public String toString() {
-		return "Campanha [id=" + id + ", tipoCampanha=" + tipoCampanha + ", ano=" + ano + ", qtdeParticipantes="
-				+ qtdeParticipantes + "]";
-	}
+   
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 	
-	private final String tipoCampanha;
-	private final String ano;
-	private final Long qtdeParticipantes;
+
+	private  String sexo;
+	private  String ano;
 	
-	public Campanha(Long id, String tipoCampanha, String ano, Long qtdeParticipantes) {
-		super();
-		this.tipoCampanha = tipoCampanha;
+	public Campanha() {
+	};
+	
+	public Campanha(String sexo, String ano) {
+		this.sexo = sexo;
 		this.ano = ano;
-		this.qtdeParticipantes = qtdeParticipantes;
 	}
 	
-	public String getTipoCampanha() {
-		return tipoCampanha;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public String getSexo() {
+		return sexo;
 	}
 
 	public String getAno() {
 		return ano;
 	}
-	public Long getQtdeParticipantes() {
-		return qtdeParticipantes;
-	}
 	
+	
+	 @Override
+		public String toString() {
+			return "Campanha [id=" + id + ", sexo=" + sexo + ", ano=" + ano + ", qtdeParticipantes="
+				+ "]";
+		}
 
 }

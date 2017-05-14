@@ -1,17 +1,21 @@
 package com.dasa.service;
 
-import com.dasa.domain.Campanha;
-import com.dasa.domain.DadoPopulacional;
-
+import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Service;
+import com.dasa.domain.Campanha;
+import com.dasa.domain.CampanhaRetorno;
+import com.dasa.domain.ConsultaRetorno;
 
 
 public interface CampanhaService {
 
-    Campanha obterParticipantesPorAno(final Optional<String> ano);
+    List<ConsultaRetorno> obterParticipantesPorAno(final Optional<String> ano);
+    
+    Campanha obterParticipantesPorId(final Optional<Long> id);
 
-	Campanha salvar(Campanha camp);
+    List<Campanha> obterAllCampanhas();
+    
+	CampanhaRetorno salvar(Campanha camp);
 
 }

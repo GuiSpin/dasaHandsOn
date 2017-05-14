@@ -25,6 +25,7 @@ public class PopulacaoController {
 		System.out.println("teste");
 		
 		DadoPopulacional pop = service.obterPopulacaoPorAno(Optional.of(year));
+		System.out.println(pop);
 		EstatisticaAnoResponse stat = new EstatisticaAnoResponse(pop);
 		
 		return stat;
